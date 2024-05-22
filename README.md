@@ -1,5 +1,6 @@
-# Operator explnation, Graph-Algorithms(Down)
-# Graph Operations Extension
+### 207275215
+### amitgini0369@gmail.com
+# Graph Operations Extension (Graph-Algorithms-Down)
 
 ## Introduction
 This GitHub repository contains the implementation of the `Graph` class, which now supports various mathematical operations on graphs represented by adjacency matrices. Building upon the previous assignment which introduced the basic graph structure and its algorithms, this extension integrates operator overloading to perform arithmetic, comparison, and I/O operations in a manner consistent with linear algebra principles.
@@ -25,7 +26,7 @@ Graph g1(n); // Create a graph of dimension n
 Graph g2(n); // Create another graph of dimension n
 Graph gSum = g1 + g2; // Sum of two graphs
 std::cout << gSum; // Print the resulting graph
-
+```
 
 # From EX1:
 # Graph-Algorithms
