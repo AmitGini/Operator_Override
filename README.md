@@ -1,59 +1,92 @@
-# מטלה 2 - גרפים והעמסת אופרטורים
+# Operator explnation, Graph-Algorithms(Down)
+# Graph Operations Extension
 
-במטלה הקודמת מימשתם את המחלקה `Graph.cpp` המאפשרת ייצוג של גרפים בעזרת מטריצת שכנויות. במטלה הזאת, אתם תרחיבו את המחלקה ותוסיפו תמיכה באופרטורים חשבוניים על גרפים.
-כאמור, הגרפים מיוצגים בעזרת מטריצת שכנויות, לכן כל האופרטורים צריכים להיות חוקיים עבור מטריצות (כמו שלמדתם בקורס אלגברה לינארית).
+## Introduction
+This GitHub repository contains the implementation of the `Graph` class, which now supports various mathematical operations on graphs represented by adjacency matrices. Building upon the previous assignment which introduced the basic graph structure and its algorithms, this extension integrates operator overloading to perform arithmetic, comparison, and I/O operations in a manner consistent with linear algebra principles.
 
-אתם תצטרכו להוסיף את האופרטורים הבאים:
+## Features
+- **Arithmetic Operators**: Implements addition (+), subtraction (-), and multiplication (*) for graphs of the same dimension (nXn). Attempting to perform these operations on graphs of different dimensions will throw an error.
+- **Compound Assignment Operators**: Includes `+=`, `-=`, `*=`, to modify the graph in-place.
+- **Increment and Decrement Operators**: `++` and `--` are used to increase or decrease all edge weights in the graph by 1.
+- **Scalar Multiplication**: Multiplies all edge weights by an integer scalar.
+- **Comparison Operators**: Implements equality (==), inequality (!=), less than (<), less than or equal (<=), greater than (>), and greater than or equal (>=) based on the number of edges and matrix order.
+- **Stream Insertion Operator**: A `std::ostream` operator (`<<`) for outputting the graph's adjacency matrix in a readable format.
 
-- שישה אופרטורים חשבוניים: חיבור (+) הוספה (+=) פלוס אונרי (+), ושלושת האופרטורים המקבילים לחיסור (-). כאמור, חיבור/חיסור של שתי מטריצות מוגדר רק על מטריצות מאותו סדר גודל nXn. ניסיון לחבר/לחסר שתי מטריצות שלא מקיימות תנאי זה יגרום לזריקת שגיאה.
-- שישה אופרטורי השוואה: גדול, גדול-או-שווה, קטן, קטן-או-שווה, שווה, לא-שווה. לשם מטלה זו כללי השוואת גרפים הם כדלקמן:
+## Requirements
+- Graphs must be represented as adjacency matrices of equal dimensions when performing arithmetic operations.
+- Error handling is implemented for operations involving graphs of incompatible sizes.
 
-  1. גרפים G1 ו-G2 ייקראו שווים אם הם מאותו סדר גודל ומכילים את אותן הצלעות (והמשקלים של הצלעות זהים) או אם G1 לא גדול מ-G2 וגם G2 לא גדול מ-G1.
-  2. גרף G2 גדול מגרף G1 אם הגרף G1 מוכל ממש בגרף G2. אם אף גרף לא מוכל ממש בשני והגרפים לא שווים, אז גרף G2 גדול מגרף G1 אם מספר הצלעות ב-G2 גדול ממספר הצלעות ב-G1. אם בכל זאת מספר הצלעות זהה, אז הגרף G2 גדול מהגרף G1 אם המטריצה המייצגת של G2 בעלת סדר גודל גבוה יותר משל G1.
+## Usage
+Include `Graph.cpp`, `Algorithms.cpp` (from the previous assignment), and link them in your project to utilize the extended functionalities. Ensure all operator functionalities are available by including appropriate headers.
 
-- הגדלה ב-1 (++) והקטנה ב-1 (--) לפני ואחרי המספר. פעולה זו תגדיל או תקטין ב-1 את כל המשקלים של הצלעות בגרף.
-- הכפלה בסקלר שלם (`int`) - מכפיל את המשקל של כל הצלעות.
-- הכפלת גרפים - אנחנו מגדירים את פעולת הכפל בין גרף G1 לגרף G2 על ידי מכפלה של המטריצות המייצגות של שני הגרפים. התוצאה צריכה להיות מטריצה המייצגת גרף. ניסיון לבצע כפל בין גרפים בגדלים שונים צריך לזרוק שגיאה.
-- אופרטור פלט - הדפסה הגיונית של הגרף (צורת ההפדסה היא לשיקולכם).
+### Example
+```cpp
+Graph g1(n); // Create a graph of dimension n
+Graph g2(n); // Create another graph of dimension n
+Graph gSum = g1 + g2; // Sum of two graphs
+std::cout << gSum; // Print the resulting graph
 
 
-כמו כן, עליכם לכלול גם את הקובץ `Algorithms.cpp` מהמטלה הקודמת ולראות כיצד הפונקציות שהגדרתם בפעם הקודמת משתנות עכשיו. בנוסף לקבצים של המטלה אתם נדרשים להגיש גם קובץ README המתאר את אופן המימוש ואת החלוקה שביצעתם בקוד (סוג של מדריך משתמש).
-עליכם לכתוב בתחילת כל קובץ את מספר תעודת הזהות שלכם ואת המייל. אי עמידה בהנחיות תגרור הפחתה בציון.
-בהצלחה!
+# From EX1:
+# Graph-Algorithms
+Algorithms implementations on Graph represented by adjacency matrix.
 
-g1+g2 V
-g1-g2 V
-g1 += g2 V
-g1 -= g2 V
-g1 += (x int) V
-g1 -= (x int) V
+**Info-**
+- The Code representing graph using adjacency matrix with integers values.
+- The graph can be direct or undirected.
+- The graph can be weighted or unweighted, and with integers values.
 
-++g V
-g++ V
---g V
-g-- V
+## Definitions:
+**NOTE!** When talking about i and j, means 0 <= i,j <= n (n is the length of columns that is equal to the length of rows).
+- `Adjacency Matrix` - The matrix must be with equal size of rows and columns, with Integer values.
+- `Directed Graph` - There is value (i,j) in the adjacency matrix that is NOT equal to (j,i). **(Check NOTE!)**
+- `Undirected Graph` - The adjacency matrix is equal to its transport [meaning for every i,j in adjacency matrix (i,j) = (j,i)]. **(Check NOTE!)**
+- `Weight Graph` - There is value (i,j) in the adjacency matrix that not equals to 0 or 1. **(Check NOTE!)**
+- `Unweighted Graph` - For every (i,j) in the adjacency matrix, all the values equals to 0 or 1. **(Check Note!)**
 
-std::cout<<g1<<std::endl; V
+## Type Definition Variable:
+- `typedef vector<vector<int>> Matrix` - Defining new variable represented by 2 vectors of ints - (2D array).
 
-remains:
+## Graph:
+Class that represented graph, using adjacency matrix with integers values.
+### Graph:Constructors:
+- `Graph()` - Default Constructor
+- `~Graph()` - Destructor
+### Graph:Fields(private):
+- `Matrix` = `vector<vector<int>>` - Double array of integers
+- `Matrix myTransposeMatrix` - The transpose of the matrix, updated after loading the matrix.
+- `size_t numVertices` - The number of vertices in the graph, updated after loading the matrix.
+- `size_t numEdges` - The number of edges in the graph, updated after loading the matrix.
+- `bool isUndirected` - True - Undirected Graph, False - Directed, default value false, after loading matrix updated if needed.
+- `bool isWeighted` - True - Weighted Graph, False - Unweighted Graph, default value false, after loading matrix updated if needed.
 
-g1*g2 No equal g2*g1
-g1 *= x (x int) 
-g1<=g2
-g1>=g2
-g1<g2
-g1>g2
-g1==g2
-g1!=g2
+### Graph Methods:
+**Set Methods(private):**
+- `updateGraphProperty()` - Update the graph properties(transpose, isWeighted, isUndirected) after loading the matrix.
+**Set Methods(public):**
+- `void loadGraph(const Matrix matrixArg)` - load matrix to the graph, and calling updateGraphProperty() to update the graph properties.
+- `void printGraph() const` - Print the graph will print on the output screen the number of edges and vertices in the graph.
+**Getters Methods(public):**
+- `const Matrix& getMatrix() const` - Return the matrix 
+- `const Matrix& getTransposeMatrix() const` - Return the transpose matrix
+- `bool isUndirectedGraph() const` - Return if its undirected graph
+- `bool isWeightedGraph() const` - Return if its weighted graph
+- `size_t getNumVertices() const` - Return the number of vertices in the graph
+- `size_t getNumEdges() const` - Return the number of edges in the graph
 
-// Implementation of operator '<='
+## Algorithms:
+### Fields
+`None`
+### Algorithms Methods:
+- `static bool isConnected(const Graph &graph)` - Return 1 = True if the graph is connected else, 0 = False
+- `static isContainsCycle(const Graph &graph)` - Return 1 = True if the graph contains cycle else, 0 = False
+- `static string shortestPath(const Graph &graph, size_t src, size_t dest)` - Return the minimum weight or shortest path, if not weights graph it will return the shortest path between 2 vertices, if there is no path "0" == FAIL.
+- `static string isBipartite(const Graph &graph)` - Return "0" if there is no bipartite else return string of the groups A and B.
+- `static string negativeCycle(const Graph &graph)` - Return string of the negative cycle if there is one else return "0" == FAIL.
 
-// Implementation of operator '<'
-
-// Implementation of operator '>'
-
-// Implementation of operator '=<'
-
-// Implementation of operator '=='
-
-// Implementation of operator '!='
+### Helper Methods:
+- `static string BFS(const Graph &graph, vector<int> &dist, size_t src, vector<int> &prev, size_t dest)` - updating dist and prev vectors to reconstruct the shortest path of the graph from the source vertex.
+- `static string DFS(const Graph &graph, vector<int> &dist, vector<int> &prev)` - Return if the graph is connected.
+- `static string DFSVisit(const Graph &graph, size_t vertex, vector<size_t> &color, size_t currTime, vector<size_t> &discTime, vector<size_t> &finishTime, vector<int> &prev )` - DFSVisit method for DFS method.
+- `static int BF(const Graph &graph, size_t src, size_t dest)` - updating dist and prev vectors to reconstruct the shortest path of the graph from the source vertex, and also check if there is negative cycle, also return index that part of the negative cycle to reconstruct it.
+- `static isBipartiteHelper(const Graph &graph, vector<size_t> &color, size_t src)` - Helper method for isBipartite method.
