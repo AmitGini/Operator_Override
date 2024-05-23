@@ -1,6 +1,6 @@
 ### 207275215
 ### amitgini0369@gmail.com
-# Graph Operations Extension (Graph-Algorithms-Down)
+# Graph Operations Extension (to Graph-Algorithms)
 
 ## Introduction
 This GitHub repository contains the implementation of the `Graph` class, which now supports various mathematical operations on graphs represented by adjacency matrices. Building upon the previous assignment which introduced the basic graph structure and its algorithms, this extension integrates operator overloading to perform arithmetic, comparison, and I/O operations in a manner consistent with linear algebra principles.
