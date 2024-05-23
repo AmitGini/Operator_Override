@@ -41,8 +41,8 @@ ariel::Graph gSum = graph1 * graph2; // Multi of two graphs
 std::cout << gSum; // Print the resulting graph
 ```
 
-# From EX1:
-# Graph-Algorithms
+# 
+# From EX1 - [Graph-Algorithms](https://github.com/AmitGini/Graph-Algorithms)🤝
 Algorithms implementations on Graph represented by adjacency matrix.
 
 **Info-**
