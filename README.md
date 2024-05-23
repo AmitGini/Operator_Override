@@ -7,7 +7,7 @@
 This GitHub repository contains the implementation of the `Graph` class, which now supports various mathematical operations on graphs represented by adjacency matrices. Building upon the previous assignment which introduced the basic graph structure and its algorithms, this extension integrates operator overloading to perform arithmetic, comparison, and I/O operations in a manner consistent with linear algebra principles.
 
 ## Features
-- **Arithmetic Operators**: Implements addition (+), subtraction (-), and multiplication (*) for graphs of the same dimension (nXn). Attempting to perform these operations on graphs of different dimensions will throw an error.
+- **Arithmetic Operators**: Implements addition `+`, subtraction `-`, and multiplication `*` for graphs of the same dimension (nXn). These operators create a new graph and return its reference. ***Importantly***, since the `Graph` class contains only primitive data types and `std::vector<std::vector>`, which handles its own memory, there is no need for explicit memory management (`new` or `delete`) by the user, althought destructor exist, for further extension if needed and variety of uses.
 - **Compound Assignment Operators**: Includes `+=`, `-=`, `*=`, to modify the graph in-place.
 - **Increment and Decrement Operators**: `++` and `--` are used to increase or decrease all edge weights in the graph by 1.
 - **Scalar Multiplication**: Multiplies all edge weights by an integer scalar.
