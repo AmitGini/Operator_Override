@@ -20,11 +20,24 @@ This GitHub repository contains the implementation of the `Graph` class, which n
 ## Usage
 Include `Graph.cpp`, `Algorithms.cpp` (from the previous assignment), and link them in your project to utilize the extended functionalities. Ensure all operator functionalities are available by including appropriate headers.
 
-### Example
+### Example (Part of the operations)
 ```cpp
-Graph g1(n); // Create a graph of dimension n
-Graph g2(n); // Create another graph of dimension n
-Graph gSum = g1 + g2; // Sum of two graphs
+#include <Graph.hpp>
+ariel::Graph graph1(n); // Create a graph of dimension n
+ariel::Graph graph2(n); // Create another graph of dimension n
+Matrix matrixGraph1 = {
+        {0, 1, 0},
+        {1, 0, 1},
+        {0, 1, 0}};
+graph1.loadGraph(matrixGraph1);
+Matrix matrixGraph2 = {
+        {0, -2, 0},
+        {3, 5, 4},
+        {2, 1, 0}};
+g2.loadGraph(matrixGraph2);
+ariel::Graph gSum = graph1 + graph2; // Sum of two graphs
+ariel::Graph gSum = graph1 - graph2; // Sub of two graphs
+ariel::Graph gSum = graph1 * graph2; // Multi of two graphs
 std::cout << gSum; // Print the resulting graph
 ```
 
