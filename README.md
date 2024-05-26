@@ -1,6 +1,6 @@
 ### 207275215
 ### amitgini0369@gmail.com
-# Graph Operations Extension (to Graph-Algorithms)
+# Overloading-Operators of Graph (Extension to Graph-Algorithms)
 **NOTE!** The code of Graph-Algorithms is included in this repository with the extension, farther explanation will be provide in the end of the readme under "Graph-Algorithms" title.
 
 ## Introduction
